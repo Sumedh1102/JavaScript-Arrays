@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Arrays</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript Arrays</h1>
+        <pre id="output"></pre>
+    </div>
+    
+    <script>
+        // Creating arrays
+        let fruits = ["Apple", "Banana", "Cherry"];
+        let numbers = new Array(1, 2, 3, 4, 5);
+
+        // Accessing elements
+        let output = "First Fruit: " + fruits[0] + "\n";
+        output += "Third Fruit: " + fruits[2] + "\n";
+
+        // Adding and removing elements
+        fruits.push("Mango");
+        fruits.pop();
+        fruits.unshift("Grapes");
+        fruits.shift();
+
+        // Modifying and checking
+        output += "Array Length: " + numbers.length + "\n";
+        output += "Includes 3? " + numbers.includes(3) + "\n";
+        output += "Index of 4: " + numbers.indexOf(4) + "\n";
+        numbers.splice(1, 1, 99);
+
+        // Iterating over arrays
+        let doubled = numbers.map(num => num * 2);
+        output += "Doubled Numbers: " + doubled.join(", ") + "\n";
+        
+        let even = numbers.filter(num => num % 2 === 0);
+        output += "Even Numbers: " + even.join(", ") + "\n";
+        
+        let sum = numbers.reduce((acc, num) => acc + num, 0);
+        output += "Sum of Numbers: " + sum + "\n";
+
+        // Sorting and reversing
+        let items = [30, 10, 50, 20];
+        items.sort((a, b) => a - b);
+        output += "Sorted Items: " + items.join(", ") + "\n";
+        items.reverse();
+        output += "Reversed Items: " + items.join(", ") + "\n";
+
+        // Spread operator
+        let arr1 = [1, 2, 3];
+        let arr2 = [...arr1, 4, 5];
+        output += "Spread Array: " + arr2.join(", ") + "\n";
+
+        // Array destructuring
+        let [first, second] = ["A", "B", "C"];
+        output += "Destructured: " + first + ", " + second + "\n";
+
+        // Multi-dimensional array
+        let matrix = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ];
+        output += "Matrix Element: " + matrix[1][2] + "\n";
+
+        document.getElementById("output").textContent = output;
+    </script>
+</body>
+</html>
